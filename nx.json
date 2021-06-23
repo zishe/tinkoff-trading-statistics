@@ -25,6 +25,9 @@
     "api-interfaces": {
       "tags": []
     },
+    "prisma-client": {
+      "tags": []
+    },
     "trade-reports": {
       "tags": []
     },
