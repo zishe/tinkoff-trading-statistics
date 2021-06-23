@@ -7,7 +7,7 @@ export const testItemTypes = [
       t.model.id();
       t.model.text();
       t.model.done();
-      // t.model.title();
+      t.model.title();
     },
   }),
   queryField((t) => {

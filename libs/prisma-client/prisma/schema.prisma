@@ -15,4 +15,5 @@ model TestItem {
   id   Int     @id @default(autoincrement())
   text String
   done Boolean
+  title String?
 }
