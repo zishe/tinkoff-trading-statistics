@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/trade-reports',
     '<rootDir>/apps/api',
     '<rootDir>/libs/prisma-client',
+    '<rootDir>/libs/data-access',
   ],
 };

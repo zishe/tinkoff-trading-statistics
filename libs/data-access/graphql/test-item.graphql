@@ -1,0 +1,15 @@
+query TestItems {
+  testItems {
+    id
+    text
+    done
+  }
+}
+
+mutation CreateOneTestItem($text: String!, $done: Boolean = false) {
+  createOneTestItem(data: { text: $text, done: $done }) {
+    id
+    text
+    done
+  }
+}
