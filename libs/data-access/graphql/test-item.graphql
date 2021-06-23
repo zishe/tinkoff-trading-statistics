@@ -2,14 +2,22 @@ query TestItems {
   testItems {
     id
     text
+    title
     done
   }
 }
 
-mutation CreateOneTestItem($text: String!, $done: Boolean = false) {
-  createOneTestItem(data: { text: $text, done: $done }) {
+mutation CreateOneTestItem($text: String!, $title: String!, $done: Boolean = false) {
+  createOneTestItem(data: { text: $text, title: $title, done: $done }) {
     id
     text
+    title
     done
+  }
+}
+
+mutation DeleteManyTestItem {
+  deleteManyTestItem {
+    count
   }
 }

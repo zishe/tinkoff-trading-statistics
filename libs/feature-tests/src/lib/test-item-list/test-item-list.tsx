@@ -11,9 +11,9 @@ export function TestItemList(props: TestItemListProps) {
 
   return (
     <ul>
-      {data?.testItems.map(({ id, text, done }) => (
+      {data?.testItems.map(({ id, text, title, done }) => (
         <li key={id}>
-          {text} - <strong>{done ? 'Done' : 'Not Done'}</strong>
+          {title} : {text} - <strong>{done ? 'Done' : 'Not Done'}</strong>
         </li>
       ))}
     </ul>

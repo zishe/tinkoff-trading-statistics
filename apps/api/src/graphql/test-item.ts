@@ -16,4 +16,7 @@ export const testItemTypes = [
   mutationField((t) => {
     t.crud.createOneTestItem();
   }),
+  mutationField((t) => {
+    t.crud.deleteManyTestItem();
+  }),
 ];
