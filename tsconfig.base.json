@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@trade-reports/prisma-client": ["libs/prisma-client/src"],
-      "@trade-reports/data-access": ["libs/data-access/src/index.tsx"]
+      "@trade-reports/data-access": ["libs/data-access/src/index.tsx"],
+      "@trade-reports/feature-tests": ["libs/feature-tests/src/index.ts"],
+      "@trade-reports/prisma-client": ["libs/prisma-client/src"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { TestItemForm, TestItemList } from '@trade-reports/feature-tests';
+import './app.module.scss';
 
-export const App = () => {
-  const [m, setMessage] = useState<any>({ message: '' });
+const client = new ApolloClient({
+  uri: '/api/graphql',
+  cache: new InMemoryCache(),
+});
 
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
+const App = () => {
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to trade-reports!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
-        />
+    <ApolloProvider client={client}>
+      <h1>Test Items</h1>
+      <div className="flex">
+        <TestItemForm />
+        <TestItemList />
       </div>
-      <div>{m.message}</div>
-    </>
+    </ApolloProvider>
   );
 };
 

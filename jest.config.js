@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/api',
     '<rootDir>/libs/prisma-client',
     '<rootDir>/libs/data-access',
+    '<rootDir>/libs/feature-tests',
   ],
 };

@@ -55,6 +55,13 @@
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "generate-gql": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn ts-node --project ./tsconfig.base.json --compiler-options '{\"module\":\"CommonJS\"}' --transpile-only apps/api/src/graphql/schema",
+            "outputPath": "apps/api/src/generated"
+          }
         }
       }
     },
@@ -74,6 +81,34 @@
           "outputs": ["coverage/libs/data-access"],
           "options": {
             "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "generate-gql": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn graphql-codegen --config libs/data-access/codegen.yml",
+            "outputPath": "libs/data-access/src"
+          }
+        }
+      }
+    },
+    "feature-tests": {
+      "root": "libs/feature-tests",
+      "sourceRoot": "libs/feature-tests/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/feature-tests/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-tests"],
+          "options": {
+            "jestConfig": "libs/feature-tests/jest.config.js",
             "passWithNoTests": true
           }
         }
