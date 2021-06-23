@@ -28,9 +28,13 @@
   "private": true,
   "dependencies": {
     "@prisma/client": "^2.25.0",
+    "apollo-server-express": "^2.25.2",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "express": "4.17.1",
+    "graphql": "^15.5.1",
+    "nexus": "^1.0.0",
+    "nexus-plugin-prisma": "^0.35.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "regenerator-runtime": "0.13.7",
@@ -74,7 +78,7 @@
     "prettier": "2.2.1",
     "prisma": "^2.25.0",
     "ts-jest": "27.0.3",
-    "ts-node": "~9.1.1",
+    "ts-node": "^10.0.0",
     "typescript": "~4.2.4"
   },
   "prisma": {

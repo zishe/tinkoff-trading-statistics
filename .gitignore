@@ -40,3 +40,4 @@ Thumbs.db
 
 # prisma
 /libs/prisma-client/src
+/apps/api/src/generated

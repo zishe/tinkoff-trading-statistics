@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@trade-reports/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@trade-reports/prisma-client": ["libs/prisma-client/src"]
     }
   },

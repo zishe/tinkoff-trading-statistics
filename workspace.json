@@ -13,7 +13,14 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets",
+              {
+                "glob": "*",
+                "input": "libs/prisma-client/prisma",
+                "output": "."
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -51,19 +58,6 @@
         }
       }
     },
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
-          }
-        }
-      }
-    },
     "prisma-client": {
       "root": "libs/prisma-client",
       "sourceRoot": "libs/prisma-client/src",
@@ -81,6 +75,13 @@
           "options": {
             "jestConfig": "libs/prisma-client/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "generate-gql": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn prisma generate",
+            "outputPath": "libs/prisma-client/src"
           }
         }
       }
